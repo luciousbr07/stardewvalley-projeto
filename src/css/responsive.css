@@ -1,0 +1,66 @@
+/*arquivo criado e usado para dar responsividade ao site, ou seja, de acordo com cada tamanho de display, diferentes formas vão aparecer para ter uma melhor visibilidade, o que aparece na tela de um notebook não consegue aparecer em um celular, por isso essas mudanças são necessárias*/
+
+@media (max-width: 1200px) { /*se o display estiver com a largura maxima de 1200px vai fazer oque estiver abaixo, como mudar a cor de fundo, tudo que estiver dentro dessa função*/
+    body{
+        background-color: #F5AB00;
+    }
+
+    .fundo-video{
+        display: none; /*esconde o video, tira o display da classe .fundo-video para aparecer a cor de fundo selecionada*/
+    }
+
+    .container{
+        flex-wrap: wrap; /*se nao tem espaco na tela os elementos ficam um embaixo do outro, para nao aparecer a rolagem de tela na horizontal, assim o conteudo vai se ajeitando na tela, ex o mario vai ficar embaixo do texto*/
+        justify-content: center;
+        height: auto;
+        gap: 30px;
+    }
+
+    .container .mario{
+        max-width: 50%;
+    }
+
+    .container .informacoes{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .container .descricao{
+        color: white;
+        text-align: center;
+    }
+
+    .container .botao-trailer{
+        background-color: #263238;
+    }
+}
+
+@media (max-width: 700px){ /*caso o display tenha a largura maxima de 700px*/
+    .cabecalho{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .container .imagem-titulo{
+        max-width: 75%;
+    }
+
+    .modal .fechar-modal{
+        width: 30px;
+        line-height: 30px; /*altra da linha, distancia de uma linha a outra*/
+    }
+
+    .modal #video{
+        width: 300px;
+        height: 169px;
+    }
+}
+
+@media (max-width: 376px){ /*caso o display tenha a largura maxima de 376px*/
+    .modal #video{
+        width: 250px;
+        height: 140px;
+    }
+}

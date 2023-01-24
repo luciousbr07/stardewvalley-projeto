@@ -1,0 +1,143 @@
+body{
+    font-family: 'Poppins';
+}
+
+.cabecalho{ /*boa pratica mudar a cor de fundo quando estiver alterando a classe para saber a regiao em que esta sendo alterada*/
+    color: white;
+    display: flex;
+    flex-direction: row; /*direcao dos elementos em linha=row, ja vem como padrao com o display-fex*/
+    justify-content: space-between; /*coloca um espaco entre (space between = espaco entre) os elementos da classe*/
+    padding: 30px;
+    max-width: 1440px; /*largura maxima*/
+    margin: 0 auto; /*centraliza a classe em relacao aos lados de acordo com a largura maxima definida*/
+
+}
+
+.cabecalho .logo{ /*boa pratica referindo ao caminho da classe .logo*/
+    width: 65px;   
+}
+
+.cabecalho .menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center; /*alinha os itens verticalmente, para acontecer é preciso definir uma altura*/
+    height: 100%; /*altura que consegue ocupar dentro da classe pai cabecalho*/
+}
+
+.cabecalho nav li a{ /*caminho da tag <a>*/
+    font-weight: bold;
+    color: white;
+    font-size: 25px;
+    padding: 10px 20px; /*espacamento interno da altura e dos lados*/
+    border-radius: 50px;
+    transition: 0.2s; /*tempo para acontecer a transicao*/
+}
+
+.cabecalho nav li a:hover{ /*hover = ao passar o mouse em cima da tag <a>*/
+    background-color: #F5AB00; 
+}
+
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: calc(100vh - 132px); /*vh = altura da tela da pessoa*/ /*calc = propriedade q tira do tamanho total da tela = 100vh o tamanho do menu, no caso 132px, para nao aparecer o scroll*/
+    padding: 0 30px 30px;
+}
+
+.container.imagem-titulo{
+    max-width: 500px; /*largura maxima*/
+}
+
+.container .descricao{
+    color: #a8adb7;
+    width: 85%;
+    font-size: 18px;
+    margin: 30px 0;
+}
+
+.container .botao-trailer{
+    background-color: #F5AB00;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase; /*formata o texto para todo em maiusculo*/
+    transition: 0.5s all ease-in-out; /*transicao em 0.5s, all = todos os elementos*/
+}
+.container .botao-trailer:hover{
+    transform: scale(1.1); /*aumenta na escala 1.1 do valor original*/
+}
+
+.fundo-video{ /*formatação da área do video*/
+    background-color: red;
+    position: absolute; /*coloca o video "em cima" da pagina, tira da mesma folha e coloca em outra separada*/
+    z-index: -1; /*posiciona o elemento no eixo z = profundidade, como é negativo, fica na parte de traz*/
+    width: 100vw; /*ocupa 100% da tela, o mesmo para a altura*/
+    height: 100vh;
+    overflow: hidden; /*esconde a parte que passa da tela, "transborda", para tirar a barra de scroll da tela*/
+    display: flex;
+    justify-content: center; 
+    position: fixed;
+}
+
+.fundo-video .video{
+    height: 100vh; /*aumenta a altura do video em sí*/
+}
+
+.fundo-video::after{ /*cria um elemento novo*/
+    content: ""; /*é preciso ter, mesmo que esteja vazio, para mostrar que tem contúdo*/
+    background-color: #d5011d;
+    height: 100vh;
+    width: 100vw;
+    position: absolute; /*traz  o elemento pra frente*/
+    top: 0; /*posiciona o elemento, alinha ao topo*/
+    left: 0; /*alinha a esquerda*/
+    
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,1) 100%); /*ferramenta usada para dar a sombra no video, deixando as laterais escuras e o meio claro, dando um efeito de opacidade. Foi usada a ferramenta cssgradient.io*/
+}
+
+.modal{
+    position: fixed; /*posicao fixa na tela*/
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(52,52,50,0.749);
+    visibility: hidden;
+}
+.modal .conteudo-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    border-radius: 5px;
+    gap: 15px; /*um espaço entre linhas e colunas, o primeiro valor refere a distancia em coluna e o segundo valor caso seja utilizado refere ao espaço em linha, nesse caso teve um espaço de coluna, para distanciar o "x" do video */
+}
+
+.modal .conteudo-modal .fechar-modal{
+    background-color: white;
+    color: orange;
+    font-weight: bold;
+    font-size: 20px;
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.modal iframe{
+    border-width: 0; /*largura da borda*/
+    width: 640px;
+    height: 360px;
+}
+
+.modal.aberto{
+    opacity: 1;
+    visibility: visible;
+}

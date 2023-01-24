@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stardew Valley</title>
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
+    <link rel="shortcut icon" href="src/imagens/icon_stardewvalley.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="fundo-video">
+        <video class="video" autoplay loop muted> 
+           <source src="src/video/Stardew Valley - Gameplay Trailer _ PS4.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <header class="cabecalho">
+        <a>
+            <img class="logo" src="src/imagens/icon_stardewvalley.png" alt="logo-mario">
+        </a>
+        
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Detalhes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        
+        <div class="informacoes">
+            <img class="imagem-titulo" src="src/imagens/Logo_of_Stardew_Valley.png" alt="titulo">
+            
+            <p class="descricao">Stardew Valley é um RPG sem fim da vida no campo! Você herdou a antiga fazenda de seu avô no Vale do Orvalho. Equipado com ferramentas de segunda mão e algumas moedas, você irá começar sua nova vida. Será que você consegue aprender a viver da terra e transformar esses campos absurdamente vegetados em uma casa próspera? Não vai ser fácil. Desde que Corporação Joja veio à cidade, os antigos modos de vida quase desapareceram. O Centro Comunitário, uma vez o lugar mais visitado da cidade, agora está em ruínas. Mas o vale parece cheio de oportunidades. Com um pouco de dedicação, você pode ser a pessoa que restaurará a grandeza do Vale do Orvalho!</p>
+            
+            <button class="botao-trailer">Veja o trailer</button>
+        </div>
+        
+        <img class="mario" src="src/imagens/imagem_casa_stardewvalley.webp" alt="personagens">
+
+        <div class="modal">
+            <div class="conteudo-modal">
+                <span class="fechar-modal">X</span>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/8A7A1X1TVNc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen id="video"></iframe>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="src/js/index.js"></script>
+
+</body>
